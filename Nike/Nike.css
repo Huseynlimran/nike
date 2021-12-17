@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bebas Neue", cursive;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  background: rgba(255, 255, 245, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  padding: 0 6%;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 0;
+}
+ul li {
+  list-style: none;
+  margin-left: 4%;
+}
+nav ul li a {
+  font-size: 24px;
+  line-height: 20px;
+  text-decoration: none;
+  color: rgba(62, 62, 62, 1);
+  font-weight: initial;
+  position: relative;
+}
+nav ul li a:hover {
+  color: gray;
+}
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0px;
+  width: 0%;
+  height: 0px;
+  transition: 0.4s;
+}
+nav ul li a:hover::before {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(108.22deg, #fbff41 -0.67%, #ec00e2 100%);
+  right: 0px;
+}
+nav ul li a i {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.048);
+  padding: 10px;
+  border-radius: 50%;
+}
+.burger {
+  cursor: pointer;
+  display: none;
+}
+.burger div {
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  margin: 7px 0;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 720px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    width: 50%;
+    height: 88vh;
+    background-color: rgba(255, 255, 255, 0.932);
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 12vh;
+    right: 0px;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.intro {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.slider {
+  background-color: #FAFF00;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  z-index: 999;
+}
+
+.intro-text {
+  color: black;
+  font-size: 3rem;
+  z-index: 999;
+}
+.hide .fontt {
+  font-size: 3rem;
+  z-index: 999;
+}
+
+.hide {
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  z-index: 999;
+}
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+  z-index: 999;
+}
+
+.nav-active {
+  transform: translateX(0%);
+  z-index: 99999;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+.toggle .line2 {
+  transform: translateX(100%);
+  background: linear-gradient(108.22deg, #fbff41 -0.67%, #ec00e2 100%);
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-7px, -6px);
+}
+.home {
+  position: relative;
+}
+.home.row {
+  background: rgba(255, 250, 208, 1);
+}
+.home .col-lg-4 {
+  overflow: visible;
+  padding-left: 6%;
+}
+
+.home h6 {
+  color: rgba(0, 167, 157, 1);
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.home .line {
+  width: 70px;
+  background-color: rgba(0, 167, 157, 1);
+  height: 3px;
+}
+
+.home h1 {
+  color: rgba(31, 23, 10, 1);
+  font-size: 126px;
+  line-height: 125px;
+  z-index: 99;
+}
+.home .dss{
+  color: transparent;
+  background: linear-gradient(107.81deg, #0047ff -0.31%,#fbff41 20%, #ec00e2 45%,black 30% );
+  -webkit-background-clip: text;
+  animation: animate 10s linear infinite;
+  -webkit-background-size: 500%;
+}
+
+.home .col-lg-8 {
+  background: linear-gradient(108.22deg, #fbff41 -0.67%, #ec00e2 100%);
+  z-index: -99;
+}
+.home .imgg {
+  background: url(img/Nike\ shoes.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 111;
+  width: 60%;
+  height: 100%;
+  position: absolute;
+}
+.home p {
+  color: rgba(255, 154, 0, 1);
+  font-size: 35px;
+  line-height: 41px;
+}
+.home button {
+  background: linear-gradient(107.81deg, #0047ff -0.31%, #ec00e2 100%);
+  padding: 10px 35px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 3px;
+}
+
+.feature {
+  position: relative;
+}
+.feature .shoe {
+  position: absolute;
+  left: -140px;
+}
+
+.feature .col-lg-4 {
+  background: url(img/image\ 1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 972px;
+}
+.feature .col-lg-8 {
+    padding-left: 15%;
+    margin-top: 15%;
+}
+.feature .col-lg-8 h6 {
+    font-size: 2em;
+  color: transparent;
+  background: linear-gradient(107.81deg, #0047ff -0.31%, #ec00e2 100%);
+  -webkit-background-clip: text;
+  animation: animate 5s linear infinite;
+  -webkit-background-size: 500%;
+}
+@keyframes animate {
+    0%{
+        background-position: 0 100%;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 100%;
+    }
+}
+
+.feature .color1 {
+    background: rgba(223, 210, 191, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.feature .color2 {
+    background: rgba(219, 168, 47, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.feature .color3 {
+    background: rgba(255, 239, 90, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.feature .color4 {
+    background: rgba(90, 206, 255, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.feature .size {
+    border: 1px solid rgba(128, 128, 128, 0.336);
+    padding: 5px 10px;
+}
+
+.feature .btn1 {
+    background: linear-gradient(108.16deg, #FAFF00 -1.06%, #EC00E2 100%);
+    color: white;
+    padding: 8px 15px;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+}
+.feature .btn2 {
+    border: 1px solid #EC00E2;
+    background-color: transparent;
+    color: rgba(62, 62, 62, 1);
+    padding: 8px 15px;
+
+
+}
+
+.products h4 {
+    color: transparent;
+  background: linear-gradient(107.81deg, #0047ff -0.31%, #ec00e2 100%);
+  -webkit-background-clip: text;
+  animation: animate 5s linear infinite;
+  -webkit-background-size: 500%;
+}
+
+.products button {
+    color: black;
+    background: linear-gradient(107.81deg, #0047ff -0.31%, #ec00e2 100%);
+    -webkit-background-clip: text;
+    animation: animate 5s linear infinite;
+    -webkit-background-size: 500%;
+    padding: 7px 15px;
+    border: 1px solid #0047ff;
+    
+}
+.products .bg3{
+    border-radius: 50%;
+
+    background: rgba(224, 225, 229, 1);
+    height: 30vh;
+}
+.products .bg4{
+  border-radius: 50%;
+
+  background: rgba(255, 131, 207, 0.384);
+  height: 30vh;
+}
+.products img {
+    transform: scale(1.5);
+    width: 100%;
+}
+.products .color1{
+    background: rgba(223, 210, 191, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.products .color2 {
+    background: rgba(219, 168, 47, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.products .color3 {
+    background: rgba(255, 239, 90, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.products .color4 {
+    background: rgba(90, 206, 255, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.products .price {
+    color: rgba(255, 61, 0, 1);
+
+}
+
+.about .row {
+    position: relative;
+}
+
+.about .contact {
+    background-color: rgba(255, 255, 255, 0.767);
+    padding: 5em;
+    position: absolute;
+    width: 30%;
+    top: 30%;
+    left: 35%;
+    display: inline-block;
+}
+
+.about button {
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    background: linear-gradient(107.81deg, #0047FF -0.31%, #EC00E2 100%);
+    color: white;
+    border: none;
+
+}
+
+footer{
+    background: rgba(2, 8, 60, 1);
+}
+
+footer .col-md-3 ul li a{
+  color: rgba(255, 255, 255, 0.664);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  text-decoration: none;
+
+}
+footer .col-md-2 ul li a{
+  color: rgba(255, 255, 255, 0.664);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+footer .col-md-2 ul {
+  margin: 0;
+  padding: 0;
+}
+footer .col-md-2 ul li {
+  padding: 0;
+  margin: 0;
+}
+footer .col-md-3 ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer .col-md-3 ul li {
+  margin: 0;
+}
+footer .col-md-3 ul li a i {
+  background-color: transparent;
+  font-size: 24px;
+}
+footer .col-md-3 ul li a i:hover {
+  color: white;
+}
+footer a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+footer input {
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+}
+footer .fd {
+  margin-left: -10px;
+}
+
+footer .hr1 {
+  width: 95%;
+  height: 2px;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+footer .op{
+  text-decoration: none;
+  color: white;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  transition: 0.4s;
+}
+footer .op:hover{
+  color: gray;
+}
+
+
+
+@media (max-width: 720px) {
+  .home .imgg {
+    width: 100%;
+    height: 40%;
+  }
+  .feature .shoe {
+    width: 100%;
+    left: 5%;
+    top: 15%;
+  }
+  .feature .col-lg-4 {
+    height: 70vh;
+  }
+  .feature .col-lg-8 {
+      width: 100%;
+      padding-left: 5%;
+  }
+  .products img {
+      width: 95%;
+  }
+  .about .contact {
+    background-color: rgba(255, 255, 255, 0.767);
+    padding: 5em;
+    position: absolute;
+    width: 85%;
+    top: 30%;
+    left: 8%;
+    display: inline-block;
+}
+}
