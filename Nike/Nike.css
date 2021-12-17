@@ -421,6 +421,7 @@ footer .col-md-3 ul li a{
   font-weight: 100;
   font-size: 14px;
   text-decoration: none;
+  transition: 0.4s;
 
 }
 footer .col-md-2 ul li a{
