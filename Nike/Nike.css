@@ -7,9 +7,15 @@
   font-family: "Bebas Neue", cursive;
 }
 
-body {
+html {
   overflow-x: hidden;
 }
+
+body {
+  overflow: hidden;
+}
+
+
 
 nav {
   background: rgba(255, 255, 245, 1);
@@ -18,6 +24,7 @@ nav {
   align-items: center;
   height: 12vh;
   padding: 0 6%;
+
 }
 
 .nav-links {
@@ -26,6 +33,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 0;
+
 }
 ul li {
   list-style: none;
@@ -72,13 +80,22 @@ nav ul li a i {
   height: 3px;
   background-color: black;
   margin: 7px 0;
-  transition: all 0.5s ease;
+  transition: all 0.5s;
 }
-
+.burger .line1 {
+  width: 15px;
+}
+.burger .line3{
+  width: 10px;
+}
 @media (max-width: 720px) {
-  body {
+  html {
     overflow-x: hidden;
   }
+  body{
+    overflow-x: hidden;
+  }
+
   .nav-links {
     width: 50%;
     height: 88vh;
@@ -97,60 +114,14 @@ nav ul li a i {
   }
 }
 
-.intro {
-  background-color: rgb(255, 255, 255);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-.slider {
-  background-color: #FAFF00;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(100%);
-  z-index: 999;
-}
-
-.intro-text {
-  color: black;
-  font-size: 3rem;
-  z-index: 999;
-}
-.hide .fontt {
-  font-size: 3rem;
-  z-index: 999;
-}
-
-.hide {
-  background: rgb(255, 255, 255);
-  overflow: hidden;
-  z-index: 999;
-}
-.hide span {
-  transform: translateY(100%);
-  display: inline-block;
-  z-index: 999;
-}
-
 .nav-active {
   transform: translateX(0%);
   z-index: 99999;
 }
 
 .toggle .line1 {
-  transform: rotate(-45deg) translate(-7px, 6px);
+  width: 30px;
+  transform: rotate(45deg) translateY(14px);
 }
 .toggle .line2 {
   transform: translateX(100%);
@@ -158,8 +129,12 @@ nav ul li a i {
   opacity: 0;
 }
 .toggle .line3 {
-  transform: rotate(45deg) translate(-7px, -6px);
+  width: 30px;
+  transform: rotate(315deg) translateY(-14px);
 }
+
+
+
 .home {
   position: relative;
 }
@@ -205,11 +180,24 @@ nav ul li a i {
   background: url(img/Nike\ shoes.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
   z-index: 111;
   width: 60%;
   height: 100%;
   position: absolute;
+}
+
+.anim{
+ animation: anime 2s ease-in-out forwards infinite alternate;
+
+}
+
+@keyframes anime {
+  from{
+     transform: translateX(3%);
+  }
+  to{
+    transform:translateX(-3%);
+  }
 }
 .home p {
   color: rgba(255, 154, 0, 1);
@@ -232,6 +220,7 @@ nav ul li a i {
 .feature .shoe {
   position: absolute;
   left: -140px;
+  top:10%
 }
 
 .feature .col-lg-4 {
@@ -467,6 +456,8 @@ footer input {
 }
 footer .fd {
   margin-left: -10px;
+  color: white;
+  cursor: pointer;
 }
 
 footer .hr1 {
@@ -518,3 +509,4 @@ footer .op:hover{
     display: inline-block;
 }
 }
+
